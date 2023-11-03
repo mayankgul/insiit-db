@@ -6,7 +6,7 @@ CREATE TABLE food_outlets (
     landmark VARCHAR,
     open_time TIME,
     close_time TIME,
-    rating JSON,   
+    rating NUMERIC,   
     menu JSON,
     image VARCHAR
 );
@@ -28,20 +28,6 @@ BEGIN
 
         IF (NEW.location ->> 'longitude' IS NULL) OR (NEW.location ->> 'longitude')::TEXT IS NULL THEN
             RAISE EXCEPTION 'longitude must be a number in a string';
-        END IF;
-    END IF;
-
-    IF NEW.rating IS NOT NULL THEN
-        IF NOT JSON_TYPEOF(NEW.rating) = 'object' THEN
-            RAISE EXCEPTION 'rating must be an object';
-        END IF;
-
-        IF (NEW.rating ->> 'total' IS NULL) OR (NEW.rating ->> 'total')::NUMERIC IS NULL THEN
-            RAISE EXCEPTION 'total rating must be a number';
-        END IF;
-
-        IF (NEW.rating ->> 'count' IS NULL) OR (NEW.rating ->> 'count')::NUMERIC IS NULL THEN
-            RAISE EXCEPTION 'count of ratings must be a number';
         END IF;
     END IF;
 

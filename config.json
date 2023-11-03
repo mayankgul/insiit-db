@@ -21,18 +21,7 @@
           "type": "varchar"
         },
         "rating": {
-          "type": "json",
-          "json_template": {
-            "type": "object",
-            "properties": {
-              "total": {
-                "type": "real"
-              },
-              "count": {
-                "type": "integer"
-              }
-            }
-          }
+          "type": "float"
         },
         "size": {
           "type": "varchar"
@@ -91,18 +80,7 @@
           "type": "time"
         },
         "rating": {
-          "type": "json",
-          "json_template": {
-            "type": "object",
-            "properties": {
-              "total": {
-                "type": "real"
-              },
-              "count": {
-                "type": "integer"
-              }
-            }
-          }
+          "type": "float"
         },
         "menu": {
           "type": "json",
@@ -140,18 +118,7 @@
           "type": "varchar"
         },
         "rating": {
-          "type": "json",
-          "json_template": {
-            "type": "object",
-            "properties": {
-              "total": {
-                "type": "real"
-              },
-              "count": {
-                "type": "integer"
-              }
-            }
-          }
+          "type": "float"
         },
         "cal": {
           "type": "integer"
@@ -178,102 +145,394 @@
           "type": "integer",
           "not_null": true
         },
-        "breakfast": {
+        "monday_breakfast": {
           "type": "json",
           "json_template": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "day": {
-                  "type": "integer"
-                },
-                "food": {
-                  "type": "array",
-                  "items": {
-                    "type": "integer",
-                    "foreign_key": true,
-                    "references": {
-                      "table": "mess_menu_items",
-                      "column": "id"
-                    }
-                  }
-                }
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
               }
             }
           }
         },
-        "lunch": {
+        "monday_lunch": {
           "type": "json",
           "json_template": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "day": {
-                  "type": "integer"
-                },
-                "food": {
-                  "type": "array",
-                  "items": {
-                    "type": "integer",
-                    "foreign_key": true,
-                    "references": {
-                      "table": "mess_menu_items",
-                      "column": "id"
-                    }
-                  }
-                }
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
               }
             }
           }
         },
-        "snacks": {
+        "monday_snacks": {
           "type": "json",
           "json_template": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "day": {
-                  "type": "integer"
-                },
-                "food": {
-                  "type": "array",
-                  "items": {
-                    "type": "integer",
-                    "foreign_key": true,
-                    "references": {
-                      "table": "mess_menu_items",
-                      "column": "id"
-                    }
-                  }
-                }
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
               }
             }
           }
         },
-        "dinner": {
+        "monday_dinner": {
           "type": "json",
           "json_template": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "day": {
-                  "type": "integer"
-                },
-                "food": {
-                  "type": "array",
-                  "items": {
-                    "type": "integer",
-                    "foreign_key": true,
-                    "references": {
-                      "table": "mess_menu_items",
-                      "column": "id"
-                    }
-                  }
-                }
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "tuesday_breakfast": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "tuesday_lunch": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "tuesday_snacks": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "tuesday_dinner": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "wednesday_breakfast": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "wednesday_lunch": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "wednesday_snacks": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "wednesday_dinner": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "thursday_breakfast": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "thursday_lunch": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "thursday_snacks": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "thursday_dinner": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "friday_breakfast": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "friday_lunch": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "friday_snacks": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "friday_dinner": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "saturday_breakfast": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "saturday_lunch": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "saturday_snacks": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "saturday_dinner": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "sunday_breakfast": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "sunday_lunch": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "sunday_snacks": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
+              }
+            }
+          }
+        },
+        "sunday_dinner": {
+          "type": "json",
+          "json_template": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "foreign_key": true,
+              "references": {
+                "table": "mess_menu_items",
+                "column": "id"
               }
             }
           }
@@ -360,18 +619,7 @@
           }
         },
         "rating": {
-          "type": "json",
-          "json_template": {
-            "type": "object",
-            "properties": {
-              "total": {
-                "type": "real"
-              },
-              "count": {
-                "type": "integer"
-              }
-            }
-          }
+          "type": "float"
         },
         "menu": {
           "type": "integer",
