@@ -1,0 +1,4 @@
+CREATE TABLE bus_types (
+    id SERIAL PRIMARY KEY,
+    type VARCHAR NOT NULL
+);
